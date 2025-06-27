@@ -21,7 +21,7 @@ const TabSwitch = ({ currentMode, setCurrentMode, mode }) => {
                 className={`ring-offset-background focus-visible:ring-ring disabled:opacity-50:bg-background:text-foreground:shadow-sm inline-flex items-center justify-center rounded-sm px-4 py-1.5 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none ${currentMode === mode[1] && 'bg-[#0a0b0d]'} flex items-center gap-2`}
             >
                 Google VEO3{' '}
-                <span className="rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-2 py-0.5 text-xs font-medium text-white">
+                <span className="rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-2 py-0.5 text-xs font-medium text-[#93a3b5]">
                     NEW
                 </span>
             </button>

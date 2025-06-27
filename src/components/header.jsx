@@ -26,14 +26,14 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="flex items-center gap-4">
-                    <button className="ring-offset-background focus-visible:ring-ring hover:bg-accent hover:text-accent-foreground inline-flex h-10 w-9 items-center justify-center gap-2 rounded-md px-0 text-sm font-medium whitespace-nowrap transition-colors hover:bg-[#d26c0a] hover:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
+                    <button className="ring-offset-background focus-visible:ring-ring hover:bg-accent hover:text-accent-foreground inline-flex h-10 w-9 items-center justify-center gap-2 rounded-md px-0 text-sm font-medium whitespace-nowrap transition-colors hover:bg-[#d26c0a] hover:text-[#93a3b5] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
                         <FontAwesomeIcon icon={faGlobe} />
                     </button>
-                    <button className="ring-offset-background focus-visible:ring-ring border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex h-10 w-10 items-center justify-center gap-2 rounded-full border text-sm font-medium whitespace-nowrap transition-colors hover:bg-[#d26c0a] hover:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
+                    <button className="ring-offset-background focus-visible:ring-ring border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex h-10 w-10 items-center justify-center gap-2 rounded-full border text-sm font-medium whitespace-nowrap transition-colors hover:bg-[#d26c0a] hover:text-[#93a3b5] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
                         <FontAwesomeIcon icon={faMoon} />
                     </button>
                     <div className="hidden items-center gap-4 md:flex">
-                        <button className="ring-offset-background focus-visible:ring-ring hover:bg-accent inline-flex h-10 items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium whitespace-nowrap text-white transition-colors hover:bg-[#d26c0a] hover:text-[#EA962D] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
+                        <button className="ring-offset-background focus-visible:ring-ring hover:bg-accent inline-flex h-10 items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium whitespace-nowrap text-[#93a3b5] transition-colors hover:bg-[#d26c0a] hover:text-[#EA962D] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
                             Login
                         </button>
                         <button className="ring-offset-background focus-visible:ring-ring text-[#EA962D]-foreground button-3d cinematic-glow inline-flex h-10 items-center justify-center gap-2 rounded-md bg-[#EA962D] px-4 py-2 text-sm font-medium whitespace-nowrap text-black transition-colors hover:bg-[#EA962D]/90 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">

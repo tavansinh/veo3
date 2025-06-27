@@ -4,21 +4,31 @@ import { useState } from 'react';
 
 const Fastmode = () => {
     const [isChecked, setIsChecked] = useState(false);
+    const [activeTab, setActiveTab] = useState('text');
+    const [activeDuration, setActiveDuration] = useState('5s');
+    const [activeQuality, setActiveQuality] = useState('360p');
+    const [activeRatio, setActiveRatio] = useState('16:9');
     return (
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             <div className="rounded-lg border border-[#4e5764] shadow-sm">
                 <div className="p-6">
                     <div className="mb-6 grid h-10 w-full grid-cols-2 items-center justify-center rounded-md bg-[#1d2733] p-1">
-                        <button className="inline-flex items-center justify-center rounded-sm bg-black px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all">
+                        <button
+                            onClick={() => setActiveTab('text')}
+                            className={`inline-flex items-center justify-center rounded-sm px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all ${activeTab === 'text' ? 'bg-black' : ''}`}
+                        >
                             Text-to-Video
                         </button>
-                        <button className="inline-flex items-center justify-center rounded-sm px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all focus-visible:outline-none disabled:opacity-50">
+                        <button
+                            onClick={() => setActiveTab('image')}
+                            className={`inline-flex items-center justify-center rounded-sm px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all focus-visible:outline-none disabled:opacity-50 ${activeTab === 'image' ? 'bg-black' : ''}`}
+                        >
                             Image-to-Video
                         </button>
                     </div>
                     <div className="space-y-6">
                         <div className="space-y-2">
-                            <p className="text-sm leading-none font-medium text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                            <p className="text-sm leading-none font-medium text-[#93a3b5] peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                                 Prompt
                             </p>
                             <textarea
@@ -36,11 +46,17 @@ const Fastmode = () => {
                                     </div>
                                 </p>
                                 <div className="border-border mt-1 flex max-w-xs overflow-hidden rounded-md border">
-                                    <button className="flex-1 bg-[#EA962D] px-4 py-2 text-sm font-medium text-black transition-colors">
+                                    <button
+                                        onClick={() => setActiveDuration('5s')}
+                                        className={`flex-1 px-4 py-2 text-sm font-medium transition-colors ${activeDuration === '5s' ? 'bg-[#EA962D] text-black' : 'bg-background text-[#93a3b5] hover:bg-[#1d2733]/50'}`}
+                                    >
                                         5 seconds
                                     </button>
                                     <div className="bg-border w-px"></div>
-                                    <button className="bg-background flex-1 px-4 py-2 text-sm font-medium transition-colors hover:bg-[#1d2733]/50">
+                                    <button
+                                        onClick={() => setActiveDuration('8s')}
+                                        className={`flex-1 px-4 py-2 text-sm font-medium transition-colors ${activeDuration === '8s' ? 'bg-[#EA962D] text-black' : 'bg-background text-[#93a3b5] hover:bg-[#1d2733]/50'}`}
+                                    >
                                         8 seconds
                                     </button>
                                 </div>
@@ -51,16 +67,28 @@ const Fastmode = () => {
                                     Video Quality
                                 </p>
                                 <div className="mt-1 grid max-w-xs grid-cols-4 gap-2">
-                                    <button className="rounded-md bg-[#EA962D] px-4 py-2 text-sm font-medium text-black transition-colors">
+                                    <button
+                                        onClick={() => setActiveQuality('360p')}
+                                        className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${activeQuality === '360p' ? 'bg-[#EA962D] text-black' : 'bg-background /50 border-border border text-[#93a3b5] hover:bg-[#1d2733]'}`}
+                                    >
                                         360p
                                     </button>
-                                    <button className="bg-background /50 border-border rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-[#1d2733]">
+                                    <button
+                                        onClick={() => setActiveQuality('540p')}
+                                        className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${activeQuality === '540p' ? 'bg-[#EA962D] text-black' : 'bg-background /50 border-border border text-[#93a3b5] hover:bg-[#1d2733]'}`}
+                                    >
                                         540p
                                     </button>
-                                    <button className="bg-background /50 border-border rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-[#1d2733]">
+                                    <button
+                                        onClick={() => setActiveQuality('720p')}
+                                        className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${activeQuality === '720p' ? 'bg-[#EA962D] text-black' : 'bg-background /50 border-border border text-[#93a3b5] hover:bg-[#1d2733]'}`}
+                                    >
                                         720p
                                     </button>
-                                    <button className="bg-background /50 border-border rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-[#1d2733]">
+                                    <button
+                                        onClick={() => setActiveQuality('1080p')}
+                                        className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${activeQuality === '1080p' ? 'bg-[#EA962D] text-black' : 'bg-background /50 border-border border text-[#93a3b5] hover:bg-[#1d2733]'}`}
+                                    >
                                         1080p
                                     </button>
                                 </div>
@@ -70,20 +98,32 @@ const Fastmode = () => {
                                 <p className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                                     Aspect Ratio
                                 </p>
-                                <div className="mt-1 flex gap-3" aria-inval>
-                                    <button className="flex h-20 w-20 flex-col items-center justify-center rounded-lg border-2 border-[#EA962D] bg-[#EA962D]/10 p-2 transition-all">
+                                <div className="mt-1 flex gap-3">
+                                    <button
+                                        onClick={() => setActiveRatio('16:9')}
+                                        className={`flex h-20 w-20 flex-col items-center justify-center rounded-lg border-2 p-2 transition-all ${activeRatio === '16:9' ? 'border-[#EA962D] bg-[#EA962D]/10' : 'border-border bg-background /50 hover:bg-[#1d2733]'}`}
+                                    >
                                         <div className="h-7 w-12 rounded bg-[#f6f8f9]/20"></div>
                                         <span className="mt-1 text-xs">16:9</span>
                                     </button>
-                                    <button className="border-border bg-background /50 flex h-20 w-20 flex-col items-center justify-center rounded-lg border-2 p-2 transition-all hover:bg-[#1d2733]">
+                                    <button
+                                        onClick={() => setActiveRatio('9:16')}
+                                        className={`flex h-20 w-20 flex-col items-center justify-center rounded-lg border-2 p-2 transition-all ${activeRatio === '9:16' ? 'border-[#EA962D] bg-[#EA962D]/10' : 'border-border bg-background /50 hover:bg-[#1d2733]'}`}
+                                    >
                                         <div className="h-12 w-7 rounded bg-[#f6f8f9]/20"></div>
                                         <span className="mt-1 text-xs">9:16</span>
                                     </button>
-                                    <button className="border-border bg-background /50 flex h-20 w-20 flex-col items-center justify-center rounded-lg border-2 p-2 transition-all hover:bg-[#1d2733]">
+                                    <button
+                                        onClick={() => setActiveRatio('1:1')}
+                                        className={`flex h-20 w-20 flex-col items-center justify-center rounded-lg border-2 p-2 transition-all ${activeRatio === '1:1' ? 'border-[#EA962D] bg-[#EA962D]/10' : 'border-border bg-background /50 hover:bg-[#1d2733]'}`}
+                                    >
                                         <div className="h-10 w-10 rounded bg-[#f6f8f9]/20"></div>
                                         <span className="mt-1 text-xs">1:1</span>
                                     </button>
-                                    <button className="border-border bg-background /50 flex h-20 w-20 flex-col items-center justify-center rounded-lg border-2 p-2 transition-all hover:bg-[#1d2733]">
+                                    <button
+                                        onClick={() => setActiveRatio('3:4')}
+                                        className={`flex h-20 w-20 flex-col items-center justify-center rounded-lg border-2 p-2 transition-all ${activeRatio === '3:4' ? 'border-[#EA962D] bg-[#EA962D]/10' : 'border-border bg-background /50 hover:bg-[#1d2733]'}`}
+                                    >
                                         <div className="h-11 w-8 rounded bg-[#f6f8f9]/20"></div>
                                         <span className="mt-1 text-xs">3:4</span>
                                     </button>
@@ -123,7 +163,7 @@ const Fastmode = () => {
                             </div>
                             {isChecked && (
                                 <div className="space-y-2">
-                                    <p className="text-sm leading-none font-medium text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                    <p className="text-sm leading-none font-medium text-[#93a3b5] peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                                         Sound Effect Description
                                     </p>
                                     <textarea

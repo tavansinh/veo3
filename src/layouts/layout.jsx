@@ -20,7 +20,9 @@ const Layout = () => {
                     {currentMode === mode[0] && <Fastmode />}
                     {currentMode === mode[1] && <Googlemode />}
                     {currentMode === mode[2] && <Normalmode />}
-                    {currentMode === mode[3] && <History />}
+                    {currentMode === mode[3] && (
+                        <History setCurrentMode={setCurrentMode} mode={mode} />
+                    )}
                 </div>
                 <Outlet />
             </main>

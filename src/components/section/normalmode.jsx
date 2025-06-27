@@ -7,6 +7,8 @@ const Normalmode = () => {
     const [activeDuration, setActiveDuration] = useState('5s');
     const [activeQuality, setActiveQuality] = useState('standard');
     const [activeRatio, setActiveRatio] = useState('16:9');
+
+
     return (
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             <div className="rounded-lg border border-[#4e5764] shadow-sm">
@@ -26,19 +28,20 @@ const Normalmode = () => {
                         </button>
                     </div>
 
-                    <div className="mb-6 rounded-lg bg-[#1e2733] border border-[#4e5764] p-4">
-                        <div className="flex items-center gap-2 mb-2">
+                    <div className="mb-6 rounded-lg border border-[#4e5764] bg-[#1e2733] p-4">
+                        <div className="mb-2 flex items-center gap-2">
                             <FontAwesomeIcon icon={faInfo} className="text-[#EA962D]" size="sm" />
-                            <h3 className="text-sm font-medium text-white">Normal Mode Notice</h3>
+                            <h3 className="text-sm font-medium text-[#93a3b5]">Normal Mode Notice</h3>
                         </div>
                         <p className="text-sm text-[#93a3b5]">
-                            Normal mode does not support audio generation. Videos generated in this mode will be silent.
+                            Normal mode does not support audio generation. Videos generated in this
+                            mode will be silent.
                         </p>
                     </div>
 
                     <div className="space-y-6">
                         <div className="space-y-2">
-                            <p className="text-sm leading-none font-medium text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                            <p className="text-sm leading-none font-medium text-[#93a3b5] peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                                 Prompt
                             </p>
                             <textarea
@@ -58,14 +61,14 @@ const Normalmode = () => {
                                 <div className="border-border mt-1 flex max-w-xs overflow-hidden rounded-md border">
                                     <button
                                         onClick={() => setActiveDuration('5s')}
-                                        className={`flex-1 px-4 py-2 text-sm font-medium text-black transition-colors ${activeDuration === '5s' ? 'bg-[#EA962D]' : 'bg-background hover:bg-[#1d2733]/50'}`}
+                                        className={`flex-1 px-4 py-2 text-sm font-medium transition-colors ${activeDuration === '5s' ? 'bg-[#EA962D] text-black' : 'bg-background text-[#93a3b5] hover:bg-[#1d2733]/50'}`}
                                     >
                                         5 seconds
                                     </button>
                                     <div className="bg-border w-px"></div>
                                     <button
                                         onClick={() => setActiveDuration('10s')}
-                                        className={`flex-1 px-4 py-2 text-sm font-medium transition-colors ${activeDuration === '10s' ? 'bg-[#EA962D] text-black' : 'bg-background hover:bg-[#1d2733]/50'}`}
+                                        className={`flex-1 px-4 py-2 text-sm font-medium transition-colors ${activeDuration === '10s' ? 'bg-[#EA962D] text-black' : 'bg-background text-[#93a3b5] hover:bg-[#1d2733]/50'}`}
                                     >
                                         10 seconds
                                     </button>
@@ -79,13 +82,13 @@ const Normalmode = () => {
                                 <div className="mt-1 flex max-w-xs gap-2">
                                     <button
                                         onClick={() => setActiveQuality('standard')}
-                                        className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${activeQuality === 'standard' ? 'bg-[#EA962D] text-black' : 'bg-background /50 border-border border hover:bg-[#1d2733]'}`}
+                                        className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${activeQuality === 'standard' ? 'bg-[#EA962D] text-black' : 'bg-background /50 border-border border text-[#93a3b5] hover:bg-[#1d2733]'}`}
                                     >
                                         Standard Version
                                     </button>
                                     <button
                                         onClick={() => setActiveQuality('pro')}
-                                        className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${activeQuality === 'pro' ? 'bg-[#EA962D] text-black' : 'bg-background /50 border-border border hover:bg-[#1d2733]'}`}
+                                        className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${activeQuality === 'pro' ? 'bg-[#EA962D] text-black' : 'bg-background /50 border-border border text-[#93a3b5] hover:bg-[#1d2733]'}`}
                                     >
                                         Pro Version
                                     </button>
